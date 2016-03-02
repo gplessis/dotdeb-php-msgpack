@@ -16,11 +16,11 @@
   <email>laruence@php.net</email>
   <active>yes</active>
  </lead>
- <date>2015-10-27</date>
- <time>10:47:43</time>
+ <date>2016-03-01</date>
+ <time>11:19:06</time>
  <version>
-  <release>2.0.0</release>
-  <api>2.0.0</api>
+  <release>2.0.1</release>
+  <api>2.0.1</api>
  </version>
  <stability>
   <release>beta</release>
@@ -28,7 +28,9 @@
  </stability>
  <license filesource="LICENSE">New BSD</license>
  <notes>
-- Release msgpack for PHP7
+- Fixed issue #82 (Check hash protection flag to avoid memory corruption)
+- Fixed Issue #80 (Serialized failed on unseted value)
+- When packing/unpacking a zend_object don&apos;t call magic methods __set/__get
  </notes>
  <contents>
   <dir name="/">
@@ -61,7 +63,7 @@
    <file md5sum="2df5f20637c712ac4e40349c9bca0c4f" name="tests/026.phpt" role="test" />
    <file md5sum="049ae91b1497a754f559f4bc5a33911a" name="tests/027.phpt" role="test" />
    <file md5sum="1d7ea3932f82f209467843ad1d6854c3" name="tests/028.phpt" role="test" />
-   <file md5sum="137c13b8d806ac837c7553c3c8868b31" name="tests/029.phpt" role="test" />
+   <file md5sum="3b90bf97273370c63baec504e97a45b1" name="tests/029.phpt" role="test" />
    <file md5sum="a56527beea8c1f48809836859bb9abe7" name="tests/030.phpt" role="test" />
    <file md5sum="3f37b5f1f4da46a1afeafea516d56490" name="tests/031.phpt" role="test" />
    <file md5sum="170dfcb82fd1e097fffc6b57a7e9764a" name="tests/032.phpt" role="test" />
@@ -143,7 +145,7 @@
    <file md5sum="1b99d02a41791e5cf6481d3e32635e75" name="tests/134.phpt" role="test" />
    <file md5sum="ae5088b921e06924d0ea9af308b92d3d" name="tests/135.phpt" role="test" />
    <file md5sum="78f1d56b752d8ce366d4b1ab9bb2b6d3" name="tests/136.phpt" role="test" />
-   <file md5sum="72835e56a7ca51292b27a8d7c32076c0" name="tests/137.phpt" role="test" />
+   <file md5sum="f30d9679e8a00e78f53a73dda672cc4d" name="tests/137.phpt" role="test" />
    <file md5sum="333dc07dc48d1ddfa910576732f895f9" name="tests/bug006.phpt" role="test" />
    <file md5sum="72b75090e9394aa99a77f99cd4179fbb" name="tests/bug011.phpt" role="test" />
    <file md5sum="689ea7ea5319999115ae6e181e238329" name="tests/bug012.phpt" role="test" />
@@ -161,11 +163,11 @@
    <file md5sum="c70221eb89f486561c0eabdd4a5d779f" name="msgpack_convert.c" role="src" />
    <file md5sum="f43ac337b3fe1336c6ee150953fc0b8f" name="msgpack_convert.h" role="src" />
    <file md5sum="57609c731c80438bd2c0c54ea226c547" name="msgpack_errors.h" role="src" />
-   <file md5sum="4c0bf224edbcda1f5b0195139c574261" name="msgpack_pack.c" role="src" />
+   <file md5sum="509e8ba2088a59ccf83791d766bb334b" name="msgpack_pack.c" role="src" />
    <file md5sum="8f60d5f243b15a17b17fdf4798c17cd7" name="msgpack_pack.h" role="src" />
-   <file md5sum="8eeee8efcb612022f84db0696b9d38a1" name="msgpack_unpack.c" role="src" />
+   <file md5sum="74d57833d9088325c5f6b4aa622eefd8" name="msgpack_unpack.c" role="src" />
    <file md5sum="83fe0e476d5d7298a839ccdca8188f03" name="msgpack_unpack.h" role="src" />
-   <file md5sum="b3130854d2b17741f7e95455860cea36" name="php_msgpack.h" role="src" />
+   <file md5sum="74eb56a1043ec46a8625f1b73ec5bab7" name="php_msgpack.h" role="src" />
    <file md5sum="82079e9a298ecdda2122757ddfbf576e" name="msgpack/pack_define.h" role="src" />
    <file md5sum="571109130796df8e2e4c5f2231202df1" name="msgpack/pack_template.h" role="src" />
    <file md5sum="1d616b69bd7f0222a53b290a81c0530b" name="msgpack/unpack_define.h" role="src" />
@@ -187,6 +189,23 @@
  <providesextension>msgpack</providesextension>
  <extsrcrelease />
  <changelog>
+  <release>
+   <date>2016-03-01</date>
+   <version>
+    <release>2.0.1</release>
+    <api>2.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>
+- Fixed issue #82 (Check hash protection flag to avoid memory corruption)
+- Fixed Issue #80 (Serialized failed on unseted value)
+- When packing/unpacking a zend_object don&apos;t call magic methods __set/__get
+   </notes>
+  </release>
   <release>
    <date>2015-10-27</date>
    <version>
